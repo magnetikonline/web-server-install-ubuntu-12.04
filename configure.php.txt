@@ -1,0 +1,26 @@
+$ ./configure \
+	--with-curl=/usr/bin \
+	--with-gd \
+	--with-jpeg-dir=/usr \
+	--with-mcrypt \
+	--with-mysqli \
+	--with-png-dir=/usr \
+	--enable-fpm \
+	--enable-mbstring \
+	--disable-cgi \
+	--disable-ctype \
+	--disable-debug \
+	--disable-dom \
+	--disable-fileinfo \
+	--disable-filter \
+	--disable-pdo \
+	--disable-phar \
+	--disable-simplexml \
+	--disable-tokenizer \
+	--disable-xmlreader \
+	--disable-xmlwriter \
+	--without-iconv \
+	--without-pdo-sqlite \
+	--without-pear \
+	--without-sqlite3 \
+	--with-config-file-path=/etc/php5

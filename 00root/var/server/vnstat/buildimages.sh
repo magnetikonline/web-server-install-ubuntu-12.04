@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIRNAME=`dirname $0`
+VNSTATIBIN="$DIRNAME/vnstati"
+VNSTATCONF="$DIRNAME/vnstat.conf"
+IMAGEOUTDIR="/var/www/00/_vnstat768438"
+INTERFACE="eth0"
+
+
+$VNSTATIBIN --config $VNSTATCONF -i $INTERFACE -s -o $IMAGEOUTDIR/00summary.png
+$VNSTATIBIN --config $VNSTATCONF -i $INTERFACE -h -o $IMAGEOUTDIR/01hourly.png
+$VNSTATIBIN --config $VNSTATCONF -i $INTERFACE -d -o $IMAGEOUTDIR/02daily.png
+$VNSTATIBIN --config $VNSTATCONF -i $INTERFACE -m -o $IMAGEOUTDIR/03monthly.png

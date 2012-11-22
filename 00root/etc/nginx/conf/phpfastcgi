@@ -1,0 +1,6 @@
+location ~ "\.php$" {
+	include /etc/nginx/fastcgi_params;
+	if (-f $request_filename) {
+		fastcgi_pass unix:/run/php5/php-fpm.sock;
+	}
+}
