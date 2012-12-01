@@ -101,18 +101,18 @@ Instructions and supplied configuration files are based on the following fiction
 
 ### Build from source
 - `$ sudo su`
-- `$ apt-get install checkinstall libpcre3-dev zlib1g-dev`
-- `$ mkdir -p ~/build/nginx && cd ~/build/nginx`
-- `$ wget http://nginx.org/download/nginx-1.2.5.tar.gz`
-- `$ tar xvf nginx-1.2.5.tar.gz && cd nginx-1.2.5`
+- `# apt-get install checkinstall libpcre3-dev zlib1g-dev`
+- `# mkdir -p ~/build/nginx && cd ~/build/nginx`
+- `# wget http://nginx.org/download/nginx-1.2.5.tar.gz`
+- `# tar xvf nginx-1.2.5.tar.gz && cd nginx-1.2.5`
 - Configure Nginx makefile as required, refer to [configure.nginx.txt](configure.nginx.txt) for an example
 - Make and build deb package
-- `$ make`
-- `$ checkinstall -D --nodoc make -i install`
+- `# make`
+- `# checkinstall -D --nodoc make -i install`
 	- Name output deb package (e.g. `Nginx 1.2.5`)
 	- Press enter to proceed with package creation
 - Review built deb package contents
-- `$ dpkg -c nginx_1.2.5-1_amd64.deb`
+- `# dpkg -c nginx_1.2.5-1_amd64.deb`
 - **Optional:** Save `nginx_1.2.5-1_amd64.deb` package for later use
 
 ### Configure
@@ -135,18 +135,18 @@ Instructions and supplied configuration files are based on the following fiction
 
 ### Build from source
 - `$ sudo su`
-- `$ apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev libmcrypt-dev`
-- `$ mkdir -p ~/build/php && cd ~/build/php`
-- `$ wget http://php.net/get/php-5.4.9.tar.gz/from/this/mirror`
-- `$ tar xvf php-5.4.9.tar.gz && cd php-5.4.9`
+- `# apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev libmcrypt-dev`
+- `# mkdir -p ~/build/php && cd ~/build/php`
+- `# wget http://php.net/get/php-5.4.9.tar.gz/from/this/mirror`
+- `# tar xvf php-5.4.9.tar.gz && cd php-5.4.9`
 - Configure PHP makefile as required, refer to [configure.php.txt](configure.php.txt) for an example
 - Make and build deb package
-- `$ make`
-- `$ checkinstall -D --nodoc make -i install`
+- `# make`
+- `# checkinstall -D --nodoc make -i install`
 	- Name output deb package (e.g. `PHP 5.4.9`)
 	- Press enter to proceed with package creation
 - Review built deb package contents
-- `$ dpkg -c php_5.4.9-1_amd64.deb`
+- `# dpkg -c php_5.4.9-1_amd64.deb`
 - **Optional:** Save `php_5.4.9-1_amd64.deb` package for later use
 
 ### Configure
@@ -164,15 +164,15 @@ Instructions and supplied configuration files are based on the following fiction
 
 ### Build from source
 - `$ sudo su`
-- `$ apt-get install autoconf`
-- `$ mkdir -p ~/build/phpapc && cd ~/build/phpapc`
-- `$ wget http://pecl.php.net/get/APC-3.1.13.tgz`
-- `$ tar xvf APC-3.1.13.tgz && cd APC-3.1.13`
-- `$ phpize`
-- `$ ./configure`
-- `$ make`
-- `$ cd modules`
-- `$ mv apc.so /etc/php5/ext`
+- `# apt-get install autoconf`
+- `# mkdir -p ~/build/phpapc && cd ~/build/phpapc`
+- `# wget http://pecl.php.net/get/APC-3.1.13.tgz`
+- `# tar xvf APC-3.1.13.tgz && cd APC-3.1.13`
+- `# phpize`
+- `# ./configure`
+- `# make`
+- `# cd modules`
+- `# mv apc.so /etc/php5/ext`
 
 ### Configure
 - A base configuration is provided under the `[apc]` section of `/etc/php5/php.ini`, tweak settings as required to suit your PHP application(s).
@@ -215,14 +215,14 @@ Instructions and supplied configuration files are based on the following fiction
 
 ### Build from source
 - `$ sudo su`
-- `$ apt-get install gcc libgd2-xpm-dev`
-- `$ mkdir -p ~/build/vnstat && cd ~/build/vnstat`
-- `$ wget http://humdi.net/vnstat/vnstat-1.11.tar.gz`
-- `$ tar xvf vnstat-1.11.tar.gz`
-- `$ cd vnstat-1.11`
-- `$ make all`
-- `$ mkdir -p /var/server/vnstat`
-- `$ cp ./src/vnstat ./src/vnstatd ./src/vnstati /var/server/vnstat`
+- `# apt-get install gcc libgd2-xpm-dev`
+- `# mkdir -p ~/build/vnstat && cd ~/build/vnstat`
+- `# wget http://humdi.net/vnstat/vnstat-1.11.tar.gz`
+- `# tar xvf vnstat-1.11.tar.gz`
+- `# cd vnstat-1.11`
+- `# make all`
+- `# mkdir -p /var/server/vnstat`
+- `# cp ./src/vnstat ./src/vnstatd ./src/vnstati /var/server/vnstat`
 
 ### Configure
 - Copy upstart init script `/etc/init/vnstat.conf` in place
