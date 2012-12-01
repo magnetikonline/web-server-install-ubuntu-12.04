@@ -1,4 +1,5 @@
 # Table of contents
+- [Example environment overview](#example-environment-overview)
 - [Initial tasks](#initial-tasks)
 - [Nginx](#nginx)
 - [PHP](#php)
@@ -8,7 +9,7 @@
 - [vnStat](#vnstat)
 
 ## Example environment overview
-Instructions below and supplied configurations files assume the following example server environment. Adjust implementation and configuration to suit.
+Instructions and supplied configuration files are based on the following fictional environment. Adjust your implementation and configuration to suit.
 
 - **Operating system:** Ubuntu server 12.04.1 LTS
 - **Hostname:** servername
@@ -90,7 +91,7 @@ Instructions below and supplied configurations files assume the following exampl
 - `$ sudo ufw status verbose`
 - **Note:** Adjust allowed incoming ports as required, the provided `/var/server/script/ufw-rulesetup.sh` opens ports **22** & **80** for SSH and HTTP respectively only.
 
-### Remove apparmor
+### Remove AppArmor
 - **Note:** YMMV, but I am personally not a fan of AppArmor so choose to remove it, but you can skip these steps if desired.
 - `$ sudo /etc/init.d/apparmor stop`
 - `$ sudo update-rc.d -f apparmor remove`
@@ -188,7 +189,7 @@ Instructions below and supplied configurations files assume the following exampl
 - Update `/etc/mysql/my.cnf` in place
 - `$ sudo rm /var/log/mysql.*`
 - `$ sudo stop mysql`
-- Delete initial InnoDB log files to be re-created at their new size (set by `innodb_log_file_size` in `/etc/mysql/my.cnf`) upon mysql startup.
+- Delete initial InnoDB log files to be recreated at their new size (set by `innodb_log_file_size` in `/etc/mysql/my.cnf`) upon MySQL startup.
 - `$ sudo rm /var/lib/mysql/ib_logfile?`
 - `$ sudo start mysql`
 
