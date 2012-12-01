@@ -1,12 +1,13 @@
 $ ./configure \
+	--with-config-file-path=/etc/php5 \
+	--enable-fpm \
+	--enable-mbstring \
 	--with-curl=/usr/bin \
 	--with-gd \
 	--with-jpeg-dir=/usr \
 	--with-mcrypt \
 	--with-mysqli \
 	--with-png-dir=/usr \
-	--enable-fpm \
-	--enable-mbstring \
 	--disable-cgi \
 	--disable-ctype \
 	--disable-debug \
@@ -22,5 +23,4 @@ $ ./configure \
 	--without-iconv \
 	--without-pdo-sqlite \
 	--without-pear \
-	--without-sqlite3 \
-	--with-config-file-path=/etc/php5
+	--without-sqlite3
