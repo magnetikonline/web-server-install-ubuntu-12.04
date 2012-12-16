@@ -12,6 +12,7 @@
 Instructions and supplied configuration files are based on the following fictional environment. Adjust your implementation and configuration to suit.
 
 - **Operating system:** Ubuntu server 12.04.1 LTS
+- **Public IP address:** 123.456.456.123
 - **Hostname:** servername
 - **Fully qualified domain name (FQDN):** servername.domainname.com
 - **Website domain:** websitename.com
@@ -19,7 +20,7 @@ Instructions and supplied configuration files are based on the following fiction
 ## Initial tasks
 
 ### Create user
-- **Note:** replace `username` with your desired Linux username
+- **Note:** replace `username` with desired Linux username
 - `$ adduser [username]`
 - Add new user to 'sudo' group
 - `$ usermod -aG sudo [username]`
@@ -39,6 +40,7 @@ Instructions and supplied configuration files are based on the following fiction
 - Configure & confirm network interface settings in `/etc/network/interfaces`
 - `$ sudo /etc/init.d/networking restart`
 - `$ ifconfig`
+- `$ sudo cp /etc/sysctl.conf /etc/sysctl.conf.pkg`
 - Update `/etc/sysctl.conf` in place
 - `$ sudo sysctl -p`
 
@@ -51,7 +53,7 @@ Instructions and supplied configuration files are based on the following fiction
 - Confirm hostname reported by server
 - `$ hostname && hostname -f`
 - Should return `servername` and `servername.domainname.com` respectively
-- **Tip:** After successful hostname configuration is complete, ensure a reverse DNS entry (PTR record) has been added for your server. Important at the *very least* for outgoing SMTP (Postfix in this example), as many receiving SMTP servers will perform a reverse IP lookup as the first line of validity checking for incoming email.
+- **Tip:** After successful hostname configuration is complete, ensure a reverse DNS entry (PTR record) has been added for your server. Important at the *very least* for outgoing SMTP ([Postfix](#postfix) in this example), as many receiving SMTP servers will perform a reverse IP lookup as the first line of validity checking for incoming email.
 - `$ dig -x 123.456.456.123`
 - Will return `servername.domainname.com` as the DNS server response if PTR record correctly configured.
 
@@ -68,7 +70,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo cp /etc/rsyslog.conf /etc/rsyslog.conf.pkg`
 - Update `/etc/rsyslog.conf` in place
 - `$ sudo stop rsyslog && sudo start rsyslog`
-- Test services are logging as required and log rotations function correctly
+- Test services are logging as required and log rotations function correctly.
 
 ### Crontab
 - **Note:** I prefer to have all cron jobs located in a single `/etc/crontab` rather than using `/etc/cron(daily|weekly|monthly)`.
@@ -89,7 +91,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo /var/server/script/ufw-rulesetup.sh`
 - `$ sudo ufw enable`
 - `$ sudo ufw status verbose`
-- **Note:** Adjust allowed incoming ports as required, the provided `/var/server/script/ufw-rulesetup.sh` opens ports **22** & **80** for SSH and HTTP respectively only.
+- **Note:** Adjust allowed incoming ports as required, the provided `/var/server/script/ufw-rulesetup.sh` opens ports **22** & **80** for SSH (rate limited) and HTTP respectively only.
 
 ### Remove AppArmor
 - **Note:** YMMV, but I am personally not a fan of AppArmor so choose to remove it, but you can skip these steps if desired.
@@ -103,23 +105,24 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo su`
 - `# apt-get install checkinstall libpcre3-dev zlib1g-dev`
 - `# mkdir -p ~/build/nginx && cd ~/build/nginx`
-- `# wget http://nginx.org/download/nginx-1.2.5.tar.gz`
-- `# tar xvf nginx-1.2.5.tar.gz && cd nginx-1.2.5`
+- `# wget http://nginx.org/download/nginx-1.2.6.tar.gz`
+- `# tar xvf nginx-1.2.6.tar.gz && cd nginx-1.2.6`
 - Configure Nginx makefile as required, refer to [configure.nginx.txt](configure.nginx.txt) for an example
 - Make and build deb package
 - `# make`
 - `# checkinstall -D --nodoc make -i install`
-	- Name output deb package (e.g. `Nginx 1.2.5`)
+	- Name output deb package (e.g. `Nginx 1.2.6`)
 	- Press enter to proceed with package creation
 - Review built deb package contents
-- `# dpkg -c nginx_1.2.5-1_amd64.deb`
-- **Optional:** Save `nginx_1.2.5-1_amd64.deb` package for later use
+- `# dpkg -c nginx_1.2.6-1_amd64.deb`
+- **Optional:** Save `nginx_1.2.6-1_amd64.deb` package for later use
 
 ### Configure
 - **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). More than likely you will need to modify the `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
 - Copy upstart init script `/etc/init/nginx.conf` in place
 - `$ sudo mkdir -p /var/www/00`
 - `$ sudo mkdir -p /var/log/nginx/00`
+- `$ sudo touch /var/www/00/index.html`
 - `$ sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.pkg`
 - Update `/etc/nginx/nginx.conf` in place
 - `$ sudo cp /etc/nginx/mime.types /etc/nginx/mime.types.pkg`
@@ -135,7 +138,7 @@ Instructions and supplied configuration files are based on the following fiction
 
 ### Build from source
 - `$ sudo su`
-- `# apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev libmcrypt-dev`
+- `# apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev`
 - `# mkdir -p ~/build/php && cd ~/build/php`
 - `# wget http://php.net/get/php-5.4.9.tar.gz/from/this/mirror`
 - `# tar xvf php-5.4.9.tar.gz && cd php-5.4.9`
