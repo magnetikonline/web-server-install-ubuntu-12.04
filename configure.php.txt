@@ -2,10 +2,9 @@ $ ./configure \
 	--with-config-file-path=/etc/php5 \
 	--enable-fpm \
 	--enable-mbstring \
-	--with-curl=/usr/bin \
+	--with-curl \
 	--with-gd \
 	--with-jpeg-dir=/usr \
-	--with-mcrypt \
 	--with-mysqli \
 	--with-png-dir=/usr \
 	--disable-cgi \
