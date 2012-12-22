@@ -140,17 +140,17 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo su`
 - `# apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev`
 - `# mkdir -p ~/build/php && cd ~/build/php`
-- `# wget http://php.net/get/php-5.4.9.tar.gz/from/this/mirror`
-- `# tar xvf php-5.4.9.tar.gz && cd php-5.4.9`
+- `# wget http://php.net/get/php-5.4.10.tar.gz/from/this/mirror -O php-5.4.10.tar.gz`
+- `# tar xvf php-5.4.10.tar.gz && cd php-5.4.10`
 - Configure PHP makefile as required, refer to [configure.php.txt](configure.php.txt) for an example
 - Make and build deb package
 - `# make`
 - `# checkinstall -D --nodoc make -i install`
-	- Name output deb package (e.g. `PHP 5.4.9`)
+	- Name output deb package (e.g. `PHP 5.4.10`)
 	- Press enter to proceed with package creation
 - Review built deb package contents
-- `# dpkg -c php_5.4.9-1_amd64.deb`
-- **Optional:** Save `php_5.4.9-1_amd64.deb` package for later use
+- `# dpkg -c php_5.4.10-1_amd64.deb`
+- **Optional:** Save `php_5.4.10-1_amd64.deb` package for later use
 
 ### Configure
 - **Note:** Configuration has been provided as an example, certain sections assume PHP paths have been set as per [configure.php.txt](configure.php.txt). More than likely you will need to modify the `/etc/php5/php.ini` & `/etc/php5/php-fpm.ini` presented here to suit your specific requirements.
