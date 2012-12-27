@@ -16,5 +16,5 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 	14		4		*		*		*		root	/var/server/cron/00nightly.sh >/dev/null 2>&1
 
+	*/5		*		*		*		*		root	find /tmp -name "sess_*" -cmin +24 -print0 | xargs -0r rm >/dev/null 2>&1
 	*/20	*		*		*		*		root	/var/server/vnstat/buildimages.sh >/dev/null 2>&1
-	*/20	*		*		*		*		root	find /tmp -name "sess_*" -cmin +24 -print0 | xargs -0r rm >/dev/null 2>&1
