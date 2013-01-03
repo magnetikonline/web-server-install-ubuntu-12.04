@@ -169,13 +169,12 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo su`
 - `# apt-get install autoconf`
 - `# mkdir -p ~/build/phpapc && cd ~/build/phpapc`
-- `# wget http://pecl.php.net/get/APC-3.1.13.tgz`
-- `# tar xvf APC-3.1.13.tgz && cd APC-3.1.13`
+- `# wget http://pecl.php.net/get/APC-3.1.14.tgz`
+- `# tar xvf APC-3.1.14.tgz && cd APC-3.1.14`
 - `# phpize`
 - `# ./configure`
 - `# make`
-- `# cd modules`
-- `# mv apc.so /etc/php5/ext`
+- `# mv ./modules/apc.so /etc/php5/ext`
 
 ### Configure
 - A base configuration is provided under the `[apc]` section of `/etc/php5/php.ini`, tweak settings as required to suit your PHP application(s).
