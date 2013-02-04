@@ -1,7 +1,7 @@
 # Web server install - Ubuntu 12.04 LTS
 
 ## What is this?
-A step-by-step [install guide](webserverinstall.ubuntu12.04/blob/master/install.md) for a Nginx, PHP & MySQL enabled web application server based on Ubuntu 12.04LTS.
+A step-by-step [install guide](install.md) for a Nginx, PHP & MySQL enabled web application server based on Ubuntu 12.04LTS.
 
 The guide is based upon previous experience of web server installs and is the basis of the steps I typically undertake when provisioning new production servers. Steps have been broken down into high level components to allow the inclusion/exclusion of specific server items as required.
 
@@ -25,9 +25,9 @@ Finally for overall success, it's expected the reader has at least moderate expe
 Note that the performance critical components of Nginx and PHP are compiled from source rather than pre-built repository packages. Successful compilation of these components under Ubuntu/Debian is well supported, ensures latest stable builds are used and allows a fast upgrade path as source releases are made available.
 
 ## Configuration files
-Every configuration file added or modified on top of a base Ubuntu 12.04LTS server install has been added as part of this repository under the [/00root](webserverinstall.ubuntu12.04/tree/master/00root) directory. This is typically how I manage my own workflow, keeping all configuration files for each server in private Git repositories so I can reliably track changes/modifications to server environments.
+Every configuration file added or modified on top of a base Ubuntu 12.04LTS server install has been added as part of this repository under the [/00root](00root) directory. This is typically how I manage my own workflow, keeping all configuration files for each server in private Git repositories so I can reliably track changes/modifications to server environments.
 
-**Note:** many configuration files are specific to physical server/application stack requirements (e.g. network/hostname, open firewall ports, Nginx, PHP), so these configurations for the most part should **not** be copied verbatim, but adjusted where appropriate. All configuration does follow a mock [example environment](webserverinstall.ubuntu12.04/blob/master/install.md#example-environment-overview) to help the reader understand the configuration easier.
+**Note:** many configuration files are specific to physical server/application stack requirements (e.g. network/hostname, open firewall ports, Nginx, PHP), so these configurations for the most part should **not** be copied verbatim, but adjusted where appropriate. All configuration does follow a mock [example environment](install.md#example-environment-overview) to help the reader understand the configuration easier.
 
 ## What about [insert component], shouldn't that be part of the stack?
 - **DNS server:** I have previously installed instances of BIND for hosting domain name records, but the fact you really should setup two or more instances (primary/secondary) on physically separate networks plus the additional CPU/RAM overhead on lower end VPS systems, I'm now of the opinion this is all better served by a third party service. There are several big players in this game at very reasonable pricing (I'm personally a fan of [DNS Made Easy](http://www.dnsmadeeasy.com/)) and can offer a level of performance and redundancy that would be hard to match with a roll-your-own solution.
