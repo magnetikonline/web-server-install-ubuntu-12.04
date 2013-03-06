@@ -31,6 +31,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo apt-get install openssh-server`
 - `$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.pkg`
 - Update `/etc/ssh/sshd_config` in place
+- Update `ListenAddress` to the public IP address of server
 - Allow `username` to SSH into the server, adding `AllowUsers [username]` directive to `/etc/ssh/sshd_config`
 - `$ sudo reload ssh`
 
@@ -82,7 +83,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo chmod u+x /var/server/cron/00nightly.sh`
 
 ### Software firewall (Uncomplicated firewall)
-- **Note:** If you have a hardware firewall in-place you can more than likely skip these steps and run your server without the overhead of a software based firewall.
+- **Note:** If you have a correctly configured hardware firewall between the server and public internet you can skip these steps, running without the overhead of a software based firewall.
 - `$ sudo apt-get install ufw`
 - `$ sudo mkdir -p /var/server/script`
 - Copy `/var/server/script/ufw-rulesetup.sh` in place
@@ -91,7 +92,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo /var/server/script/ufw-rulesetup.sh`
 - `$ sudo ufw enable`
 - `$ sudo ufw status verbose`
-- **Note:** Adjust allowed incoming ports as required, the provided `/var/server/script/ufw-rulesetup.sh` opens ports **22** & **80** for SSH (rate limited) and HTTP respectively only.
+- **Note:** Adjust the allowed incoming ports as required. Provided `/var/server/script/ufw-rulesetup.sh` opens ports **22** & **80** for SSH (rate limited) and HTTP respectively only.
 
 ### Remove AppArmor
 - **Note:** YMMV, but I am personally not a fan of AppArmor so choose to remove it, but you can skip these steps if desired.
