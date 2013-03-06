@@ -31,14 +31,15 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo apt-get install openssh-server`
 - `$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.pkg`
 - Update `/etc/ssh/sshd_config` in place
-- Update `ListenAddress` to the public IP address of server
-- Allow `username` to SSH into the server, adding `AllowUsers [username]` directive to `/etc/ssh/sshd_config`
+- Configure `/etc/ssh/sshd_config`
+	- Update `ListenAddress` directive, setting to the public IP address of server
+	- Allow `username` SSH access to server, adding appropriate `AllowUsers [username]` directive
 - `$ sudo reload ssh`
 
 ### Network
 - `$ sudo cp /etc/network/interfaces /etc/network/interfaces.pkg`
 - Update `/etc/network/interfaces` in place
-- Configure & confirm network interface settings in `/etc/network/interfaces`
+- Configure network interface settings in `/etc/network/interfaces`
 - `$ sudo /etc/init.d/networking restart`
 - `$ ifconfig`
 - `$ sudo cp /etc/sysctl.conf /etc/sysctl.conf.pkg`
@@ -92,7 +93,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo /var/server/script/ufw-rulesetup.sh`
 - `$ sudo ufw enable`
 - `$ sudo ufw status verbose`
-- **Note:** Adjust the allowed incoming ports as required. Provided `/var/server/script/ufw-rulesetup.sh` opens ports **22** & **80** for SSH (rate limited) and HTTP respectively only.
+- **Note:** Adjust the allowed incoming ports as required. Provided `/var/server/script/ufw-rulesetup.sh` opens ports **22** and **80** for SSH (rate limited) and HTTP respectively only.
 
 ### Remove AppArmor
 - **Note:** YMMV, but I am personally not a fan of AppArmor so choose to remove it, but you can skip these steps if desired.
@@ -119,7 +120,7 @@ Instructions and supplied configuration files are based on the following fiction
 - **Optional:** Save `nginx_1.2.6-1_amd64.deb` package for later use
 
 ### Configure
-- **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). More than likely you will need to modify the `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
+- **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). You will need to modify `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
 - Copy upstart init script `/etc/init/nginx.conf` in place
 - `$ sudo mkdir -p /var/www/00`
 - `$ sudo mkdir -p /var/log/nginx/00`
@@ -154,7 +155,7 @@ Instructions and supplied configuration files are based on the following fiction
 - **Optional:** Save `php_5.4.10-1_amd64.deb` package for later use
 
 ### Configure
-- **Note:** Configuration has been provided as an example, certain sections assume PHP paths have been set as per [configure.php.txt](configure.php.txt). More than likely you will need to modify the `/etc/php5/php.ini` & `/etc/php5/php-fpm.ini` presented here to suit your specific requirements.
+- **Note:** Configuration has been provided as an example, certain sections assume PHP paths have been set as per [configure.php.txt](configure.php.txt). You will need to modify `/etc/php5/php.ini` and `/etc/php5/php-fpm.ini` presented here to suit your specific requirements.
 - Copy upstart init script `/etc/init/php-fpm.conf` in place
 - `$ sudo mkdir -p /etc/php5/ext`
 - Copy `/etc/php5/php-fpm.conf` in place
@@ -162,7 +163,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo touch /var/log/phperror`
 - `$ sudo chown www-data: /var/log/phperror`
 - `$ sudo start php-fpm`
-- PHP-FPM runtime statistics will be available via http://servername.domainname.com/_phpfpm346234 (URL configured or disabled via `/etc/php5/php-fpm.conf` & `/etc/nginx/nginx.conf`).
+- PHP-FPM runtime statistics will be available at http://servername.domainname.com/_phpfpm346234. This URL can be configured or disabled via `/etc/php5/php-fpm.conf` and `/etc/nginx/nginx.conf`.
 
 ## PHP - Alternative PHP cache
 
