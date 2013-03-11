@@ -107,17 +107,17 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo su`
 - `# apt-get install checkinstall libpcre3-dev zlib1g-dev`
 - `# mkdir -p ~/build/nginx && cd ~/build/nginx`
-- `# wget http://nginx.org/download/nginx-1.2.6.tar.gz`
-- `# tar xvf nginx-1.2.6.tar.gz && cd nginx-1.2.6`
+- `# wget http://nginx.org/download/nginx-1.2.7.tar.gz`
+- `# tar xvf nginx-1.2.7.tar.gz && cd nginx-1.2.7`
 - Configure Nginx makefile as required, refer to [configure.nginx.txt](configure.nginx.txt) for an example
 - Make and build deb package
 - `# make`
 - `# checkinstall -D --nodoc make -i install`
-	- Name output deb package (e.g. `Nginx 1.2.6`)
+	- Name output deb package (e.g. `Nginx 1.2.7`)
 	- Press enter to proceed with package creation
 - Review built deb package contents
-- `# dpkg -c nginx_1.2.6-1_amd64.deb`
-- **Optional:** Save `nginx_1.2.6-1_amd64.deb` package for later use
+- `# dpkg -c nginx_1.2.7-1_amd64.deb`
+- **Optional:** Save `nginx_1.2.7-1_amd64.deb` package for later use
 
 ### Configure
 - **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). You will need to modify `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
@@ -142,17 +142,17 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo su`
 - `# apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev`
 - `# mkdir -p ~/build/php && cd ~/build/php`
-- `# wget http://php.net/get/php-5.4.10.tar.gz/from/this/mirror -O php-5.4.10.tar.gz`
-- `# tar xvf php-5.4.10.tar.gz && cd php-5.4.10`
+- `# wget http://php.net/get/php-5.4.12.tar.gz/from/this/mirror -O php-5.4.12.tar.gz`
+- `# tar xvf php-5.4.12.tar.gz && cd php-5.4.12`
 - Configure PHP makefile as required, refer to [configure.php.txt](configure.php.txt) for an example
 - Make and build deb package
 - `# make`
 - `# checkinstall -D --nodoc make -i install`
-	- Name output deb package (e.g. `PHP 5.4.10`)
+	- Name output deb package (e.g. `PHP 5.4.12`)
 	- Press enter to proceed with package creation
 - Review built deb package contents
-- `# dpkg -c php_5.4.10-1_amd64.deb`
-- **Optional:** Save `php_5.4.10-1_amd64.deb` package for later use
+- `# dpkg -c php_5.4.12-1_amd64.deb`
+- **Optional:** Save `php_5.4.12-1_amd64.deb` package for later use
 
 ### Configure
 - **Note:** Configuration has been provided as an example, certain sections assume PHP paths have been set as per [configure.php.txt](configure.php.txt). You will need to modify `/etc/php5/php.ini` and `/etc/php5/php-fpm.ini` presented here to suit your specific requirements.
