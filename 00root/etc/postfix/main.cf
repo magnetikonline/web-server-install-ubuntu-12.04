@@ -119,7 +119,7 @@ myhostname = servername.domainname.com
 #inet_interfaces = all
 #inet_interfaces = $myhostname
 #inet_interfaces = $myhostname, localhost
-inet_interfaces = 123.456.456.123
+inet_interfaces = 123.255.255.123
 
 # The proxy_interfaces parameter specifies the network interface
 # addresses that this mail system receives mail on by way of a

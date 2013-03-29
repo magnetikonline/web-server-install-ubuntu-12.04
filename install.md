@@ -12,7 +12,7 @@
 Instructions and supplied configuration files are based on the following fictional environment. Adjust your implementation and configuration to suit.
 
 - **Operating system:** Ubuntu server 12.04.1 LTS
-- **Public IP address:** 123.456.456.123
+- **Public IP address:** 123.255.255.123
 - **Hostname:** servername
 - **Fully qualified domain name (FQDN):** servername.domainname.com
 - **Website domain:** websitename.com
@@ -56,7 +56,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ hostname && hostname -f`
 - Should return `servername` and `servername.domainname.com` respectively
 - **Tip:** After successful hostname configuration is complete, ensure a reverse DNS entry (PTR record) has been added for your server. Important at the *very least* for outgoing SMTP ([Postfix](#postfix) in this example), as many receiving SMTP servers will perform a reverse IP lookup as the first line of validity checking for incoming email.
-- `$ dig -x 123.456.456.123`
+- `$ dig -x 123.255.255.123`
 - Will return `servername.domainname.com` as the DNS server response if PTR record correctly configured.
 
 ### Logrotate / rsyslog

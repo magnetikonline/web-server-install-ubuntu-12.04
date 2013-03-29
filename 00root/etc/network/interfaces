@@ -8,11 +8,11 @@ iface lo inet loopback
 # The primary network interface
 auto eth0
 iface eth0 inet static
-	address 123.456.456.123
+	address 123.255.255.123
 	netmask 255.255.255.0
-	network 123.456.456.0
-	broadcast 123.456.456.255
-	gateway 123.456.456.1
+	network 123.255.255.0
+	broadcast 123.255.255.255
+	gateway 123.255.255.1
 	# dns-* options are implemented by the resolvconf package, if installed
-	dns-nameservers 123.456.456.50 123.456.456.51
+	dns-nameservers 123.255.255.50 123.255.255.51
 	dns-search webserver.com
