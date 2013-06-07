@@ -1,4 +1,4 @@
-$ ./configure \
+./configure \
 	--conf-path=/etc/nginx/nginx.conf \
 	--error-log-path=/var/log/nginx/00/error.log \
 	--with-http_gzip_static_module \

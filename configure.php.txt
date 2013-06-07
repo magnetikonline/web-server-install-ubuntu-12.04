@@ -1,4 +1,4 @@
-$ ./configure \
+./configure \
 	--with-config-file-path=/etc/php5 \
 	--enable-fpm \
 	--enable-mbstring \
