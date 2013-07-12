@@ -16,8 +16,7 @@ Finally for overall success, it's expected the reader has at least moderate expe
 	- System logging & log rotation
 	- Software firewall
 - **Nginx** web server
-- **PHP** (both PHP-FPM & PHP-CLI)
-- **Alternative PHP cache** (APC) for opcode caching
+- **PHP** (PHP-FPM & PHP-CLI with Zend OPcache provided with PHP 5.5.0+)
 - **MySQL**
 - **Postfix** MTA as an outgoing SMTP mail server
 - **vnStat** with automated graph generation for basic network traffic monitoring
