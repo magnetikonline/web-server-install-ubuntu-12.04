@@ -15,6 +15,7 @@
 	--disable-filter \
 	--disable-pdo \
 	--disable-phar \
+	--disable-posix \
 	--disable-simplexml \
 	--disable-tokenizer \
 	--disable-xmlreader \
