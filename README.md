@@ -10,7 +10,7 @@ I will try my best to keep this guide updated as I make changes/improvements to 
 Finally for overall success, it's expected the reader has at least moderate experience with the Linux/Unix shell and can get their way around the file system.
 
 ## Feature set
-- **Ubuntu 12.04.1 LTS** server with:
+- **Ubuntu 12.04.2 LTS** server with:
 	- SSH shell
 	- Correctly configured network & hostname
 	- System logging & log rotation
