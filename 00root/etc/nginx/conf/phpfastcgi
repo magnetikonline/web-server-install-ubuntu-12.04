@@ -1,6 +1,9 @@
 location ~ "\.php$" {
-	include /etc/nginx/fastcgi_params;
-	if (-f $request_filename) {
-		fastcgi_pass unix:/run/php5/php-fpm.sock;
+	fastcgi_index index.php;
+	if (!-f $document_root$fastcgi_script_name) {
+		return 404;
 	}
+
+	fastcgi_pass unix:/run/php5/php-fpm.sock;
+	include /etc/nginx/fastcgi_params;
 }
