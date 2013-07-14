@@ -1,7 +1,7 @@
 # Web server install - Ubuntu 12.04 LTS
 
 ## What is this?
-A step-by-step [install guide](install.md) for a Nginx, PHP & MySQL enabled web application server based on Ubuntu 12.04LTS.
+A step-by-step [install guide](install.md) for a Nginx, PHP & MySQL enabled web application server based on Ubuntu 12.04 LTS.
 
 The guide is based upon previous experience of web server installs and is the basis of the steps I typically undertake when provisioning new production servers. Steps have been broken down into high level components to allow the inclusion/exclusion of specific server items as required.
 
@@ -24,7 +24,7 @@ Finally for overall success, it's expected the reader has at least moderate expe
 Note that the performance critical components of Nginx and PHP are compiled from source rather than pre-built repository packages. Successful compilation of these components under Ubuntu/Debian is well supported, ensures latest stable builds are used and allows a fast upgrade path as source releases are made available.
 
 ## Configuration files
-Each file added or modified on top of a base Ubuntu 12.04LTS server install has been included in this repository within the [/00root](00root) directory. This is how I handle server change management, keeping all configuration files for each server in private Git repositories so I can reliably track changes and modifications to server environments.
+Each file added or modified on top of a base Ubuntu 12.04 LTS server install has been included in this repository within the [/00root](00root) directory. This is how I handle server change management, keeping all configuration files for each server in private Git repositories so I can reliably track changes and modifications to server environments.
 
 **Note:** many configuration files are specific to physical server/application stack requirements (e.g. network/hostname, open firewall ports, Nginx, PHP), so these configurations for the most part should **not** be copied verbatim, but adjusted where appropriate. All configuration does follow a mock [example environment](install.md#example-environment-overview) to help the reader understand the configuration easier.
 

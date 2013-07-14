@@ -125,13 +125,19 @@ Instructions and supplied configuration files are based on the following fiction
 - Make and build deb package
 
 		# make
-		# checkinstall -D --nodoc make -i install
+		# echo "Nginx 1.4.1" > description-pak && checkinstall -D -y --nodoc make -i install
 
-	- Name output deb package (e.g. `Nginx 1.4.1`)
-	- Press enter to proceed with package creation
-- Review built deb package contents
-- `# dpkg -c nginx_1.4.1-1_amd64.deb`
-- **Optional:** Save `nginx_1.4.1-1_amd64.deb` package for later use
+- Nginx will now be installed and package created with the following filename:
+	- `nginx_1.4.1-1_amd64.deb` for **64 bit** Ubuntu server
+	- `nginx_1.4.1-1_i386.deb` for **32 bit** Ubuntu server
+- Review built deb package contents, optionally save `nginx_1.4.1-1_*.deb` package for later use (recommended)
+- `# dpkg -c nginx_1.4.1-1_*.deb`
+- To remove/re-install Nginx package
+
+		$ sudo su
+		# stop nginx
+		# dpkg -r nginx
+		# dpkg -i nginx_1.4.1-1_*.deb
 
 ### Configure
 - **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). You will need to modify `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
@@ -166,13 +172,20 @@ Instructions and supplied configuration files are based on the following fiction
 - Make and build deb package
 
 		# make
-		# checkinstall -D --nodoc make -i install
+		# echo "PHP 5.5.0" > description-pak && checkinstall -D -y --nodoc make -i install
 
-	- Name output deb package (e.g. `PHP 5.5.0`)
-	- Press enter to proceed with package creation
-- Review built deb package contents
-- `# dpkg -c php_5.5.0-1_amd64.deb`
-- **Optional:** Save `php_5.5.0-1_amd64.deb` package for later use
+- PHP will now be installed and package created with the following filename:
+	- `php_5.5.0-1_amd64.deb` for **64 bit** Ubuntu server
+	- `php_5.5.0-1_i386.deb` for **32 bit** Ubuntu server
+- Review built deb package contents, optionally save `php_5.5.0-1_*.deb` package for later use (recommended)
+- `# dpkg -c php_5.5.0-1_*.deb`
+- To remove/re-install PHP package
+
+		$ sudo su
+		# stop php-fpm
+		# dpkg -r php
+		# dpkg -i php_5.5.0-1_*.deb
+
 - **Note:** Zend OPcache
 	- As of PHP 5.5.0 the [Zend OPcache](http://php.net/opcache) extension has been open sourced and subsequently bundled with the PHP source distribution. The existing Alternative PHP Cache (APC) project is no longer under active development and is not recommended for use with PHP 5.4 or above.
 	- The Zend OPcache is built automatically by default as a shared extension, enabled with the supplied [php.ini](00root/etc/php5/php.ini) provided in this guide and is recommended for use with any production PHP install to improve application performance. The extension will be installed to the `/usr/local/lib/php/extensions/no-debug-non-zts-20121212/` directory as `opcache.so`.
