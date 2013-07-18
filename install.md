@@ -123,6 +123,10 @@ Instructions and supplied configuration files are based on the following fiction
 	# wget http://nginx.org/download/nginx-1.4.1.tar.gz
 	# tar xvf nginx-1.4.1.tar.gz && cd nginx-1.4.1
 
+- If building Nginx with SSL support (`--with-http_ssl_module`) change the above `apt-get install` line to the following
+
+		# apt-get install checkinstall libpcre3-dev libssl-dev zlib1g-dev
+
 - Configure Nginx makefile as required, refer to [configure.nginx.txt](configure.nginx.txt) for an example
 - Make and build deb package
 
@@ -143,6 +147,28 @@ Instructions and supplied configuration files are based on the following fiction
 
 ### Configure
 - **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). You will need to modify `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
+- **Note:** A suggested SSL virtual host configuration has also been included (commented out) as follows. In addition, changes to `/var/server/script/ufw-rulesetup.sh` and `/var/server/script/ufw-ruleclear.sh` will be required to open port `443`.
+
+		http {
+
+			# -- SNIP --
+
+			ssl_session_cache shared:SSL:5m;
+			ssl_session_timeout 5m;
+
+			# -- SNIP --
+
+			server {
+				listen 123.255.255.123:443 default_server ssl;
+
+				keepalive_timeout 30;
+				ssl_certificate /etc/nginx/cert/websitename.com.crt;
+				ssl_certificate_key /etc/nginx/cert/websitename.com.key;
+
+				# -- SNIP --
+			}
+		}
+
 - Copy upstart init script `/etc/init/nginx.conf` in place
 
 		$ sudo mkdir -p /var/www/00
