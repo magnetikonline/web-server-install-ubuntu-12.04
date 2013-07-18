@@ -109,7 +109,7 @@ Instructions and supplied configuration files are based on the following fiction
 
 		$ sudo /etc/init.d/apparmor stop
 		$ sudo update-rc.d -f apparmor remove
-		$ sudo apt-get remove apparmor
+		$ sudo apt-get purge apparmor
 
 ## Nginx
 
