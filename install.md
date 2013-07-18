@@ -18,12 +18,14 @@ Instructions and supplied configuration files are based on the following fiction
 
 ## Initial tasks
 
-### Create user
+### Create user, add to sudo group
 - **Note:** replace `username` with desired Linux username
-- `$ adduser [username]`
-- Add new user to 'sudo' group
-- `$ usermod -aG sudo [username]`
-- Logout and re-login as `username` to continue configuration
+
+		$ sudo su
+		# adduser [username]
+		# usermod -aG sudo [username]
+
+- Logout and re-login as `username` to continue with setup
 
 ### SSH server
 - Disable root user SSH login and enable specific user(s) SSH login rights (using `username` from above steps)
@@ -69,7 +71,7 @@ Instructions and supplied configuration files are based on the following fiction
 
 		$ sudo rm /var/log/mail.*
 		$ sudo rm /var/log/ufw.log
-		$ sudo rm -r /var/log/news
+		$ sudo rm -rf /var/log/news
 
 - **Note:** I prefer to have all log rotation config within `/etc/logrotate.conf` rather than including the default `/etc/logrotate.d/*` sub-configs.
 - `$ sudo cp /etc/logrotate.conf /etc/logrotate.conf.pkg`
