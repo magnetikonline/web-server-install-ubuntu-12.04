@@ -23,19 +23,22 @@ types {
 	image/svg+xml							svg svgz;
 	image/webp								webp;
 
+	application/font-woff					woff
 	application/java-archive				jar war ear;
 	application/mac-binhex40				hqx;
 	application/msword						doc;
 	application/pdf							pdf;
 	application/postscript					ps eps ai;
 	application/rtf							rtf;
-	application/vnd.ms-excel				xls;
-	application/vnd.ms-powerpoint			ppt;
-	application/vnd.wap.wmlc				wmlc;
 	application/vnd.google-earth.kml+xml	kml;
 	application/vnd.google-earth.kmz		kmz;
+	application/vnd.ms-excel				xls;
+	application/vnd.ms-fontobject			eot
+	application/vnd.ms-powerpoint			ppt;
+	application/vnd.wap.wmlc				wmlc;
 	application/x-7z-compressed				7z;
 	application/x-cocoa						cco;
+	application/x-font-ttf					ttf
 	application/x-java-archive-diff			jardiff;
 	application/x-java-jnlp-file			jnlp;
 	application/x-makeself					run;
@@ -55,7 +58,6 @@ types {
 	application/octet-stream				bin exe dll;
 	application/octet-stream				deb;
 	application/octet-stream				dmg;
-	application/octet-stream				eot;
 	application/octet-stream				iso img;
 	application/octet-stream				msi msp msm;
 
