@@ -215,7 +215,7 @@ Instructions and supplied configuration files are based on the following fiction
 		# dpkg -i php_5.5.1-1_*.deb
 
 - **Note:** Zend OPcache
-	- As of PHP 5.5.1 the [Zend OPcache](http://php.net/opcache) extension has been open sourced and subsequently bundled with the PHP source distribution. The existing Alternative PHP Cache (APC) project is no longer under active development and is not recommended for use with PHP 5.4 or above.
+	- As of PHP 5.5.0 the [Zend OPcache](http://php.net/opcache) extension has been open sourced and subsequently bundled with the PHP source distribution. The existing Alternative PHP Cache (APC) project is no longer under active development and is not recommended for use with PHP 5.4 or above.
 	- The Zend OPcache is built automatically by default as a shared extension, enabled with the supplied [php.ini](00root/etc/php5/php.ini) provided in this guide and is recommended for use with any production PHP install to improve application performance. The extension will be installed to the `/usr/local/lib/php/extensions/no-debug-non-zts-20121212/` directory as `opcache.so`.
 	- If you wish to disable the build of the Zend OPcache you can do so by providing the `--disable-all` flag during the `./configure` step and re-enable required extensions. The supplied `/etc/php5/php.ini` will also need to be updated to disable inclusion of the extension.
 
