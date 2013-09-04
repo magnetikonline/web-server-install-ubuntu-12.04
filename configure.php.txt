@@ -1,26 +1,18 @@
-./configure \
+$ ./configure \
 	--with-config-file-path=/etc/php5 \
+	--disable-all \
+	--disable-cgi \
 	--enable-fpm \
+	--enable-hash \
+	--enable-json \
+	--enable-libxml \
 	--enable-mbstring \
+	--enable-opcache \
+	--enable-session \
+	--enable-xml \
 	--with-curl \
 	--with-gd \
 	--with-jpeg-dir=/usr \
 	--with-mysqli \
 	--with-png-dir=/usr \
-	--disable-cgi \
-	--disable-ctype \
-	--disable-debug \
-	--disable-dom \
-	--disable-fileinfo \
-	--disable-filter \
-	--disable-pdo \
-	--disable-phar \
-	--disable-posix \
-	--disable-simplexml \
-	--disable-tokenizer \
-	--disable-xmlreader \
-	--disable-xmlwriter \
-	--without-iconv \
-	--without-pdo-sqlite \
-	--without-pear \
-	--without-sqlite3
+	--without-pear
