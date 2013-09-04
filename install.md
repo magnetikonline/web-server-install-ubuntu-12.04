@@ -193,26 +193,26 @@ Instructions and supplied configuration files are based on the following fiction
 	$ sudo su
 	# apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev
 	# mkdir -p ~/build/php && cd ~/build/php
-	# wget http://php.net/get/php-5.5.1.tar.gz/from/this/mirror -O php-5.5.1.tar.gz
-	# tar xvf php-5.5.1.tar.gz && cd php-5.5.1
+	# wget http://php.net/get/php-5.5.3.tar.gz/from/this/mirror -O php-5.5.3.tar.gz
+	# tar xvf php-5.5.3.tar.gz && cd php-5.5.3
 
 - Configure PHP makefile as required, refer to [configure.php.txt](configure.php.txt) for an example
 - Make and build deb package
 
 		# make
-		# echo "PHP 5.5.1" > description-pak && checkinstall -D -y --nodoc make -i install
+		# echo "PHP 5.5.3" > description-pak && checkinstall -D -y --nodoc make -i install
 
 - PHP will now be installed and package created with the following filename:
-	- `php_5.5.1-1_amd64.deb` for **64 bit** Ubuntu server
-	- `php_5.5.1-1_i386.deb` for **32 bit** Ubuntu server
-- Review built deb package contents, optionally save `php_5.5.1-1_*.deb` package for later use (recommended)
-- `# dpkg -c php_5.5.1-1_*.deb`
+	- `php_5.5.3-1_amd64.deb` for **64 bit** Ubuntu server
+	- `php_5.5.3-1_i386.deb` for **32 bit** Ubuntu server
+- Review built deb package contents, optionally save `php_5.5.3-1_*.deb` package for later use (recommended)
+- `# dpkg -c php_5.5.3-1_*.deb`
 - To remove/re-install PHP package
 
 		$ sudo su
 		# stop php-fpm
 		# dpkg -r php
-		# dpkg -i php_5.5.1-1_*.deb
+		# dpkg -i php_5.5.3-1_*.deb
 
 - **Note:** Zend OPcache
 	- As of PHP 5.5.0 the [Zend OPcache](http://php.net/opcache) extension has been open sourced and subsequently bundled with the PHP source distribution. The existing Alternative PHP Cache (APC) project is no longer under active development and is not recommended for use with PHP 5.4 or above.
