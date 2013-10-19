@@ -20,6 +20,8 @@
 	--without-http_split_clients_module \
 	--without-http_ssi_module \
 	--without-http_upstream_ip_hash_module \
+	--without-http_upstream_keepalive_module \
+	--without-http_upstream_least_conn_module \
 	--without-http_userid_module \
 	--without-http_uwsgi_module \
 	--without-mail_imap_module \
