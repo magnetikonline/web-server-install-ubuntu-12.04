@@ -146,7 +146,7 @@ Instructions and supplied configuration files are based on the following fiction
 		# dpkg -i nginx_1.4.3-1_*.deb
 
 ### Configure
-- **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). You will need to modify `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
+- **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). You **will** need to modify `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
 - **Note:** A suggested SSL virtual host configuration has also been included (commented out) as follows. In addition, changes to `/var/server/script/ufw-rulesetup.sh` and `/var/server/script/ufw-ruleclear.sh` will be required to open port `443`.
 
 		http {
@@ -179,6 +179,7 @@ Instructions and supplied configuration files are based on the following fiction
 - Update `/etc/nginx/nginx.conf` in place
 - `$ sudo cp /etc/nginx/mime.types /etc/nginx/mime.types.pkg`
 - Update `/etc/nginx/mime.types` in place
+	- **Note:** alternatively you may wish to use the [mime.types.essential](00root/etc/nginx/mime.types.essential) definitions as a cut-down common use set of MIME types.
 - `$ sudo cp /etc/nginx/fastcgi_params /etc/nginx/fastcgi_params.pkg`
 - Update `/etc/nginx/fastcgi_params` in place
 - `$ sudo mkdir -p /etc/nginx/conf`
@@ -220,7 +221,7 @@ Instructions and supplied configuration files are based on the following fiction
 	- If you wish to disable the build of the Zend OPcache you can do so by providing the `--disable-all` flag during the `./configure` step and re-enable required extensions. The supplied `/etc/php5/php.ini` will also need to be updated to disable inclusion of the extension.
 
 ### Configure
-- **Note:** Configuration has been provided as an example, certain sections assume PHP paths have been set as per [configure.php.txt](configure.php.txt). You will need to modify `/etc/php5/php.ini` and `/etc/php5/php-fpm.ini` presented here to suit your specific requirements.
+- **Note:** Configuration has been provided as an example, certain sections assume PHP paths have been set as per [configure.php.txt](configure.php.txt). You **will** need to modify `/etc/php5/php.ini` and `/etc/php5/php-fpm.ini` presented here to suit your specific requirements.
 - Copy upstart init script `/etc/init/php-fpm.conf` in place
 - `$ sudo mkdir -p /etc/php5/ext`
 - Copy `/etc/php5/php-fpm.conf` in place
