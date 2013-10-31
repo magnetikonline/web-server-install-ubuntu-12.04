@@ -1,10 +1,11 @@
 types {
 	application/font-woff			woff;
+	application/json				json;
 	application/pdf					pdf;
 	application/rss+xml				rss;
 	application/vnd.ms-fontobject	eot;
 	application/x-font-ttf			ttf;
-	application/x-javascript		js json;
+	application/x-javascript		js;
 	application/x-shockwave-flash	swf;
 	application/zip					zip;
 
@@ -24,7 +25,7 @@ types {
 	text/html						html htm;
 	text/xml						xml;
 	text/mathml						mml;
-	text/plain						txt md;
+	text/plain						txt;
 
 	video/mp4						mp4;
 	video/mpeg						mpeg mpg;
