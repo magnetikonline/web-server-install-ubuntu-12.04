@@ -23,9 +23,9 @@ types {
 
 	text/css						css;
 	text/html						html htm;
-	text/xml						xml;
 	text/mathml						mml;
 	text/plain						txt;
+	text/xml						xml;
 
 	video/mp4						mp4;
 	video/mpeg						mpeg mpg;
