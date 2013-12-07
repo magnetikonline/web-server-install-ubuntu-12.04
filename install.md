@@ -120,8 +120,8 @@ Instructions and supplied configuration files are based on the following fiction
 	$ sudo su
 	# apt-get install checkinstall libpcre3-dev zlib1g-dev
 	# mkdir -p ~/build/nginx && cd ~/build/nginx
-	# wget http://nginx.org/download/nginx-1.4.3.tar.gz
-	# tar xvf nginx-1.4.3.tar.gz && cd nginx-1.4.3
+	# wget http://nginx.org/download/nginx-1.4.4.tar.gz
+	# tar xvf nginx-1.4.4.tar.gz && cd nginx-1.4.4
 
 - If building Nginx with SSL support (`--with-http_ssl_module`) change the above `apt-get install` line to the following
 
@@ -131,19 +131,19 @@ Instructions and supplied configuration files are based on the following fiction
 - Make and build deb package
 
 		# make
-		# echo "Nginx 1.4.3" > description-pak && checkinstall -D -y --nodoc make -i install
+		# echo "Nginx 1.4.4" > description-pak && checkinstall -D -y --nodoc make -i install
 
 - Nginx will now be installed and package created with the following filename:
-	- `nginx_1.4.3-1_amd64.deb` for **64 bit** Ubuntu server
-	- `nginx_1.4.3-1_i386.deb` for **32 bit** Ubuntu server
-- Review built deb package contents, optionally save `nginx_1.4.3-1_*.deb` package for later use (recommended)
-- `# dpkg -c nginx_1.4.3-1_*.deb`
+	- `nginx_1.4.4-1_amd64.deb` for **64 bit** Ubuntu server
+	- `nginx_1.4.4-1_i386.deb` for **32 bit** Ubuntu server
+- Review built deb package contents, optionally save `nginx_1.4.4-1_*.deb` package for later use (recommended)
+- `# dpkg -c nginx_1.4.4-1_*.deb`
 - To remove/re-install Nginx package
 
 		$ sudo su
 		# stop nginx
 		# dpkg -r nginx
-		# dpkg -i nginx_1.4.3-1_*.deb
+		# dpkg -i nginx_1.4.4-1_*.deb
 
 ### Configure
 - **Note:** Configuration has been provided as an example, certain sections assume Nginx paths have been set as per [configure.nginx.txt](configure.nginx.txt). You **will** need to modify `/etc/nginx/nginx.conf` presented here to suit your specific requirements.
@@ -194,26 +194,26 @@ Instructions and supplied configuration files are based on the following fiction
 	$ sudo su
 	# apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev
 	# mkdir -p ~/build/php && cd ~/build/php
-	# wget http://php.net/get/php-5.5.5.tar.gz/from/this/mirror -O php-5.5.5.tar.gz
-	# tar xvf php-5.5.5.tar.gz && cd php-5.5.5
+	# wget http://php.net/get/php-5.5.6.tar.gz/from/this/mirror -O php-5.5.6.tar.gz
+	# tar xvf php-5.5.6.tar.gz && cd php-5.5.6
 
 - Configure PHP makefile as required, refer to [configure.php.txt](configure.php.txt) for an example
 - Make and build deb package
 
 		# make
-		# echo "PHP 5.5.5" > description-pak && checkinstall -D -y --nodoc make -i install
+		# echo "PHP 5.5.6" > description-pak && checkinstall -D -y --nodoc make -i install
 
 - PHP will now be installed and package created with the following filename:
-	- `php_5.5.5-1_amd64.deb` for **64 bit** Ubuntu server
-	- `php_5.5.5-1_i386.deb` for **32 bit** Ubuntu server
-- Review built deb package contents, optionally save `php_5.5.5-1_*.deb` package for later use (recommended)
-- `# dpkg -c php_5.5.5-1_*.deb`
+	- `php_5.5.6-1_amd64.deb` for **64 bit** Ubuntu server
+	- `php_5.5.6-1_i386.deb` for **32 bit** Ubuntu server
+- Review built deb package contents, optionally save `php_5.5.6-1_*.deb` package for later use (recommended)
+- `# dpkg -c php_5.5.6-1_*.deb`
 - To remove/re-install PHP package
 
 		$ sudo su
 		# stop php-fpm
 		# dpkg -r php
-		# dpkg -i php_5.5.5-1_*.deb
+		# dpkg -i php_5.5.6-1_*.deb
 
 - **Note:** Zend OPcache
 	- As of PHP 5.5.0 the [Zend OPcache](http://php.net/opcache) extension has been open sourced and subsequently bundled with the PHP source distribution. The existing Alternative PHP Cache (APC) project is no longer under active development and is not recommended for use with PHP 5.4 or above.
