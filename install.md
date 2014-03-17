@@ -41,6 +41,8 @@ Instructions and supplied configuration files are based on the following fiction
 - Configure `/etc/ssh/sshd_config`
 	- Update `ListenAddress` directive, setting to the public IP address of server
 	- Allow `username` SSH access to server, adding appropriate `AllowUsers [username]` directive
+- Ensure `.ssh` directory permissions are locked down
+	- `$ sudo chmod 0700 /home/[username]/.ssh`
 - `$ sudo reload ssh`
 
 ### Network
