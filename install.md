@@ -152,14 +152,19 @@ $ sudo su
 
 	```sh
 	# make
-	# echo "Nginx 1.4.5" > description-pak && checkinstall -D -y --nodoc make -i install
+	# echo "Nginx 1.4.5" > description-pak && checkinstall -Dy --deldesc=yes --install=no --nodoc make -i install
 	```
 
-- Nginx will now be installed and package created with the following filename:
+- Nginx deb package has now been created with the following filename:
 	- `nginx_1.4.5-1_amd64.deb` for **64 bit** Ubuntu server
 	- `nginx_1.4.5-1_i386.deb` for **32 bit** Ubuntu server
-- Review built deb package contents, optionally save `nginx_1.4.5-1_*.deb` package for later use (recommended)
-- `# dpkg -c nginx_1.4.5-1_*.deb`
+- Review then install the built deb package, optionally save `nginx_1.4.5-1_*.deb` package for later use (recommended)
+
+	```sh
+	# dpkg -c nginx_1.4.5-1_*.deb
+	# dpkg -i nginx_1.4.5-1_*.deb
+	```
+
 - To remove/re-install Nginx package
 
 	```sh
@@ -230,14 +235,19 @@ $ sudo su
 
 	```sh
 	# make
-	# echo "PHP 5.5.9" > description-pak && checkinstall -D -y --nodoc make -i install
+	# echo "PHP 5.5.9" > description-pak && checkinstall -Dy --deldesc=yes --install=no --nodoc make -i install
 	```
 
-- PHP will now be installed and package created with the following filename:
+- PHP deb package has now been created with the following filename:
 	- `php_5.5.9-1_amd64.deb` for **64 bit** Ubuntu server
 	- `php_5.5.9-1_i386.deb` for **32 bit** Ubuntu server
-- Review built deb package contents, optionally save `php_5.5.9-1_*.deb` package for later use (recommended)
-- `# dpkg -c php_5.5.9-1_*.deb`
+- Review then install the built deb package, optionally save `php_5.5.9-1_*.deb` package for later use (recommended)
+
+	```sh
+	# dpkg -c php_5.5.9-1_*.deb
+	# dpkg -i php_5.5.9-1_*.deb
+	```
+
 - To remove/re-install PHP package
 
 	```sh
