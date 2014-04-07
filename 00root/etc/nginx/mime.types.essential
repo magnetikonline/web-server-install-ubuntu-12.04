@@ -14,7 +14,7 @@ types {
 	audio/x-m4a						m4a;
 
 	image/gif						gif;
-	image/jpeg						jpeg jpg;
+	image/jpeg						jpg jpeg;
 	image/png						png;
 	image/svg+xml					svg svgz;
 	image/tiff						tif tiff;
@@ -28,7 +28,7 @@ types {
 	text/xml						xml;
 
 	video/mp4						mp4;
-	video/mpeg						mpeg mpg;
+	video/mpeg						mpg mpeg;
 	video/quicktime					mov;
 	video/webm						webm;
 	video/x-flv						flv;
