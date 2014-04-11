@@ -4,6 +4,6 @@ location ~ "\.php$" {
 		return 404;
 	}
 
-	fastcgi_pass unix:/run/php5/php-fpm.sock;
 	include /etc/nginx/fastcgi_params;
+	fastcgi_pass unix:/run/php5/php-fpm.sock;
 }

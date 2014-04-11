@@ -10,7 +10,7 @@
 ## Example environment overview
 Instructions and supplied configuration files are based on the following fictional environment. Adjust your implementation and configuration to suit.
 
-- **Operating system:** Ubuntu server 12.04.3 LTS
+- **Operating system:** Ubuntu server 12.04.4 LTS
 - **Public IP address:** 123.255.255.123
 - **Hostname:** servername
 - **Fully qualified domain name (FQDN):** servername.domainname.com
