@@ -7,6 +7,7 @@
 - [Postfix](#postfix)
 - [vnStat](#vnstat)
 
+
 ## Example environment overview
 Instructions and supplied configuration files are based on the following fictional environment. Adjust your implementation and configuration to suit.
 
@@ -15,6 +16,7 @@ Instructions and supplied configuration files are based on the following fiction
 - **Hostname:** servername
 - **Fully qualified domain name (FQDN):** servername.domainname.com
 - **Website domain:** websitename.com
+
 
 ## Initial tasks
 
@@ -129,6 +131,7 @@ Instructions and supplied configuration files are based on the following fiction
 	$ sudo apt-get purge apparmor
 	```
 
+
 ## Nginx
 
 ### Build from source
@@ -218,6 +221,7 @@ $ sudo su
 - `$ sudo start nginx`
 - Nginx runtime statistics will be available via http://servername.domainname.com/_nginx563458 (URL configured or disabled via `/etc/nginx/nginx.conf`).
 
+
 ## PHP
 
 ### Build from source
@@ -277,6 +281,7 @@ $ sudo su
 
 - PHP-FPM runtime statistics will be available at http://servername.domainname.com/_phpfpm346234. This URL can be configured or disabled via `/etc/php5/php-fpm.conf` and `/etc/nginx/nginx.conf`.
 
+
 ## MySQL
 
 ### Install
@@ -292,12 +297,16 @@ $ sudo su
 	$ sudo stop mysql
 	```
 
-- Delete initial InnoDB log files to be recreated at their new size (set by `innodb_log_file_size` in `/etc/mysql/my.cnf`) upon MySQL startup.
+- Delete initial InnoDB files to be recreated (`ib_logfile?` sizes set by `innodb_log_file_size` in `/etc/mysql/my.cnf`) upon MySQL startup.
 
 	```sh
+	$ sudo rm /var/lib/mysql/ibdata1
 	$ sudo rm /var/lib/mysql/ib_logfile?
 	$ sudo start mysql
 	```
+
+- **Note:** InnoDB tables have been configured to use individual files per each table/index space via the `innodb_file_per_table` setting in `/etc/mysql/my.cnf` and is the default as of MySQL 5.6.6.
+
 
 ## Postfix
 
@@ -323,6 +332,7 @@ $ sudo su
 	$ sudo newaliases
 	$ sudo /etc/init.d/postfix start
 	```
+
 
 ## vnStat
 
