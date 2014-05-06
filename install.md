@@ -140,8 +140,8 @@ Instructions and supplied configuration files are based on the following fiction
 $ sudo su
 # apt-get install checkinstall libpcre3-dev zlib1g-dev
 # mkdir -p ~/build/nginx && cd ~/build/nginx
-# wget http://nginx.org/download/nginx-1.4.7.tar.gz
-# tar xvf nginx-1.4.7.tar.gz && cd nginx-1.4.7
+# wget http://nginx.org/download/nginx-1.6.0.tar.gz
+# tar xvf nginx-1.6.0.tar.gz && cd nginx-1.6.0
 ```
 
 - If building Nginx with SSL support (`--with-http_ssl_module`) change the above `apt-get install` line to the following
@@ -155,17 +155,17 @@ $ sudo su
 
 	```sh
 	# make
-	# echo "Nginx 1.4.7" > description-pak && checkinstall -Dy --install=no --nodoc make -i install
+	# echo "Nginx 1.6.0" > description-pak && checkinstall -Dy --install=no --nodoc make -i install
 	```
 
 - Nginx deb package has now been created with the following filename:
-	- `nginx_1.4.7-1_amd64.deb` for **64 bit** Ubuntu server
-	- `nginx_1.4.7-1_i386.deb` for **32 bit** Ubuntu server
-- Review then install the built deb package, optionally save `nginx_1.4.7-1_*.deb` package for later use (recommended)
+	- `nginx_1.6.0-1_amd64.deb` for **64 bit** Ubuntu server
+	- `nginx_1.6.0-1_i386.deb` for **32 bit** Ubuntu server
+- Review then install the built deb package, optionally save `nginx_1.6.0-1_*.deb` package for later use (recommended)
 
 	```sh
-	# dpkg -c nginx_1.4.7-1_*.deb
-	# dpkg -i nginx_1.4.7-1_*.deb
+	# dpkg -c nginx_1.6.0-1_*.deb
+	# dpkg -i nginx_1.6.0-1_*.deb
 	```
 
 - To remove/re-install Nginx package
@@ -174,7 +174,7 @@ $ sudo su
 	$ sudo su
 	# stop nginx
 	# dpkg -r nginx
-	# dpkg -i nginx_1.4.7-1_*.deb
+	# dpkg -i nginx_1.6.0-1_*.deb
 	```
 
 ### Configure

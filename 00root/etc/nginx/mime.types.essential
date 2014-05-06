@@ -1,11 +1,11 @@
 types {
 	application/font-woff			woff;
+	application/javascript			js;
 	application/json				json;
 	application/pdf					pdf;
 	application/rss+xml				rss;
 	application/vnd.ms-fontobject	eot;
 	application/x-font-ttf			ttf;
-	application/x-javascript		js;
 	application/x-shockwave-flash	swf;
 	application/zip					zip;
 
