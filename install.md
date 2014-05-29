@@ -24,9 +24,9 @@ Instructions and supplied configuration files are based on the following fiction
 - **Note:** replace `username` with desired Linux username
 
 	```sh
-	$ sudo su
-	# adduser [username]
-	# usermod -aG sudo [username]
+	# sudo adduser [username]
+	# sudo usermod -G sudo [username]
+	# groups [username]
 	```
 
 - Logout and re-login as `username` to continue with setup
