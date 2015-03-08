@@ -4,7 +4,7 @@ PID="/run/nginx.pid"
 
 
 if [ ! -f "$PID" ]; then
-	echo "Nginx not running"
+	echo "Nginx not currently running"
 	exit
 fi
 

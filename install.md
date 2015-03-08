@@ -93,7 +93,7 @@ Instructions and supplied configuration files are based on the following fiction
 - `$ sudo stop rsyslog && sudo start rsyslog`
 - Test services are logging as required and log rotations function correctly.
 
-### Crontab
+### Cron
 - **Note:** I prefer to have all cron jobs located in a single `/etc/crontab` rather than using `/etc/cron(daily|weekly|monthly)`.
 - `$ sudo cp /etc/crontab /etc/crontab.pkg`
 - Update `/etc/crontab` in place
@@ -140,8 +140,8 @@ Instructions and supplied configuration files are based on the following fiction
 $ sudo su
 # apt-get install checkinstall libpcre3-dev zlib1g-dev
 # mkdir -p ~/build/nginx && cd ~/build/nginx
-# wget http://nginx.org/download/nginx-1.6.0.tar.gz
-# tar xvf nginx-1.6.0.tar.gz && cd nginx-1.6.0
+# wget http://nginx.org/download/nginx-1.6.2.tar.gz
+# tar -xvf nginx-1.6.2.tar.gz && cd nginx-1.6.2
 ```
 
 - If building Nginx with SSL support (`--with-http_ssl_module`) change the above `apt-get install` line to the following
@@ -155,17 +155,17 @@ $ sudo su
 
 	```sh
 	# make
-	# echo "Nginx 1.6.0" > description-pak && checkinstall -Dy --install=no --nodoc make -i install
+	# echo "Nginx 1.6.2" > description-pak && checkinstall -Dy --install=no --nodoc make -i install
 	```
 
 - Nginx deb package has now been created with the following filename:
-	- `nginx_1.6.0-1_amd64.deb` for **64 bit** Ubuntu server
-	- `nginx_1.6.0-1_i386.deb` for **32 bit** Ubuntu server
-- Review then install the built deb package, optionally save `nginx_1.6.0-1_*.deb` package for later use (recommended)
+	- `nginx_1.6.2-1_amd64.deb` for **64 bit** Ubuntu server
+	- `nginx_1.6.2-1_i386.deb` for **32 bit** Ubuntu server
+- Review then install the built deb package, optionally save `nginx_1.6.2-1_*.deb` package for later use (recommended)
 
 	```sh
-	# dpkg -c nginx_1.6.0-1_*.deb
-	# dpkg -i nginx_1.6.0-1_*.deb
+	# dpkg -c nginx_1.6.2-1_*.deb
+	# dpkg -i nginx_1.6.2-1_*.deb
 	```
 
 - To remove/re-install Nginx package
@@ -174,7 +174,7 @@ $ sudo su
 	$ sudo su
 	# stop nginx
 	# dpkg -r nginx
-	# dpkg -i nginx_1.6.0-1_*.deb
+	# dpkg -i nginx_1.6.2-1_*.deb
 	```
 
 ### Configure
@@ -230,8 +230,8 @@ $ sudo su
 $ sudo su
 # apt-get install checkinstall libxml2-dev libcurl4-openssl-dev libjpeg62-dev libpng12-dev
 # mkdir -p ~/build/php && cd ~/build/php
-# wget http://php.net/get/php-5.5.14.tar.gz/from/this/mirror -O php-5.5.14.tar.gz
-# tar xvf php-5.5.14.tar.gz && cd php-5.5.14
+# wget http://php.net/get/php-5.6.6.tar.gz/from/this/mirror -O php-5.6.6.tar.gz
+# tar -xvf php-5.6.6.tar.gz && cd php-5.6.6
 ```
 
 - Configure PHP makefile as required, refer to [configure.php.txt](configure.php.txt) for an example
@@ -239,17 +239,17 @@ $ sudo su
 
 	```sh
 	# make
-	# echo "PHP 5.5.14" > description-pak && checkinstall -Dy --install=no --nodoc make -i install
+	# echo "PHP 5.6.6" > description-pak && checkinstall -Dy --install=no --nodoc make -i install
 	```
 
 - PHP deb package has now been created with the following filename:
-	- `php_5.5.14-1_amd64.deb` for **64 bit** Ubuntu server
-	- `php_5.5.14-1_i386.deb` for **32 bit** Ubuntu server
-- Review then install the built deb package, optionally save `php_5.5.14-1_*.deb` package for later use (recommended)
+	- `php_5.6.6-1_amd64.deb` for **64 bit** Ubuntu server
+	- `php_5.6.6-1_i386.deb` for **32 bit** Ubuntu server
+- Review then install the built deb package, optionally save `php_5.6.6-1_*.deb` package for later use (recommended)
 
 	```sh
-	# dpkg -c php_5.5.14-1_*.deb
-	# dpkg -i php_5.5.14-1_*.deb
+	# dpkg -c php_5.6.6-1_*.deb
+	# dpkg -i php_5.6.6-1_*.deb
 	```
 
 - To remove/re-install PHP package
@@ -258,7 +258,7 @@ $ sudo su
 	$ sudo su
 	# stop php-fpm
 	# dpkg -r php
-	# dpkg -i php_5.5.14-1_*.deb
+	# dpkg -i php_5.6.6-1_*.deb
 	```
 
 - **Note:** Zend OPcache
@@ -343,7 +343,7 @@ $ sudo su
 # apt-get install gcc libgd2-xpm-dev
 # mkdir -p ~/build/vnstat && cd ~/build/vnstat
 # wget http://humdi.net/vnstat/vnstat-1.11.tar.gz
-# tar xvf vnstat-1.11.tar.gz
+# tar -xvf vnstat-1.11.tar.gz
 # cd vnstat-1.11
 # make all
 # mkdir -p /var/server/vnstat
