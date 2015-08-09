@@ -212,8 +212,10 @@ $ sudo su
 				listen 123.255.255.123:443 default_server ssl;
 
 				keepalive_timeout 30;
+
 				ssl_certificate /etc/nginx/cert/websitename.com.crt;
 				ssl_certificate_key /etc/nginx/cert/websitename.com.key;
+				ssl_ciphers HIGH:!aNULL:!MD5;
 
 				# -- SNIP --
 			}
