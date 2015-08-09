@@ -213,11 +213,10 @@ $ sudo su
 - Update `/etc/nginx/nginx.conf` in place
 - `$ sudo cp /etc/nginx/mime.types /etc/nginx/mime.types.pkg`
 - Update `/etc/nginx/mime.types` in place
-	- **Note:** alternatively you may wish to use the [mime.types.essential](00root/etc/nginx/mime.types.essential) definitions as a cut-down common use set of MIME types.
-- `$ sudo cp /etc/nginx/fastcgi_params /etc/nginx/fastcgi_params.pkg`
-- Update `/etc/nginx/fastcgi_params` in place
+	- **Note:** alternatively you may wish to use the [mime.types.essential](00root/etc/nginx/mime.types.essential) definitions as a cut-down common-use set.
 - `$ sudo mkdir -p /etc/nginx/conf`
-- Copy `/etc/nginx/conf/phpfastcgi` in place
+- Copy `/etc/nginx/conf/phpfastcgi.conf` in place
+- Copy `/etc/nginx/conf/phpfastcgiparam.conf` in place
 - `$ sudo start nginx`
 - Nginx runtime statistics will be available via http://servername.domainname.com/_nginx563458 (URL configured or disabled via `/etc/nginx/nginx.conf`).
 
