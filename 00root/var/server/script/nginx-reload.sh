@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 
 PID="/run/nginx.pid"
 
 
-if [ ! -f "$PID" ]; then
+if [[ ! -f $PID ]]; then
 	echo "Nginx not currently running"
 	exit
 fi
 
-kill -HUP `cat $PID`
+kill -HUP $(cat $PID)

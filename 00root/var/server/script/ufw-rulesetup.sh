@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 ufw logging off
 ufw default deny incoming

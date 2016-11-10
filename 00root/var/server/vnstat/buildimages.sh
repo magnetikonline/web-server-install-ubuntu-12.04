@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
-DIRNAME=`dirname $0`
+DIRNAME=$(dirname "$0")
 VNSTAT_BIN="$DIRNAME/vnstati"
 VNSTAT_CONF="$DIRNAME/vnstat.conf"
 IMAGE_OUT_DIR="/var/www/00/_vnstat768438"

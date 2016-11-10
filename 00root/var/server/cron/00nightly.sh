@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
-DIRNAME=`dirname $0`
+DIRNAME=$(dirname "$0")
 
 
 ntpdate ntp.ubuntu.com
